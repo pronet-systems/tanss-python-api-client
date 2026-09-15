@@ -1,6 +1,6 @@
 # TANSS Python API Client
 
-**Ein Python-Client für die TANSS-REST-API - Getestet gegen TANSS 10.10.**
+**Ein Python-Client für die TANSS-REST-API - kompatibel zu 10.10.**
 
 ---
 
