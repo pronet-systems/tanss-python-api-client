@@ -1,0 +1,38 @@
+from __future__ import annotations
+from collections.abc import Callable
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
+from kiota_abstractions.get_path_parameters import get_path_parameters
+from kiota_abstractions.request_adapter import RequestAdapter
+from typing import Any, Optional, TYPE_CHECKING, Union
+
+if TYPE_CHECKING:
+    from .item.template_type_item_request_builder import TemplateTypeItemRequestBuilder
+
+class WithTemplateTypeItemRequestBuilder(BaseRequestBuilder):
+    """
+    Builds and executes requests for operations under /api/tanss.app/v1/templates/export/{templateType}
+    """
+    def __init__(self,request_adapter: RequestAdapter, path_parameters: Union[str, dict[str, Any]]) -> None:
+        """
+        Instantiates a new WithTemplateTypeItemRequestBuilder and sets the default values.
+        param path_parameters: The raw url or the url-template parameters for the request.
+        param request_adapter: The request adapter to use to execute the requests.
+        Returns: None
+        """
+        super().__init__(request_adapter, "{+baseurl}/api/tanss.app/v1/templates/export/{templateType}", path_parameters)
+    
+    def by_id(self,id: int) -> TemplateTypeItemRequestBuilder:
+        """
+        Gets an item from the tanss_api.rest.api.tanssApp.v1.templates.export.item.item collection
+        param id: Id des Quellobjekts
+        Returns: TemplateTypeItemRequestBuilder
+        """
+        if id is None:
+            raise TypeError("id cannot be null.")
+        from .item.template_type_item_request_builder import TemplateTypeItemRequestBuilder
+
+        url_tpl_params = get_path_parameters(self.path_parameters)
+        url_tpl_params["id"] = id
+        return TemplateTypeItemRequestBuilder(self.request_adapter, url_tpl_params)
+    
+

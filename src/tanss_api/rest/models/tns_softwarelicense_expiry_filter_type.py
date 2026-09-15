@@ -1,0 +1,11 @@
+from enum import Enum
+
+class TnsSoftwarelicenseExpiryFilterType(str, Enum):
+    ALL = "ALL",
+    ONLY_EXPIRED = "ONLY_EXPIRED",
+    ONLY_NOT_EXPIRED = "ONLY_NOT_EXPIRED",
+    EXPIRE_IN_60_DAYS = "EXPIRE_IN_60_DAYS",
+    EXPIRED_WITHOUT_RENEW = "EXPIRED_WITHOUT_RENEW",
+    EXPIRED_WITH_RENEW = "EXPIRED_WITH_RENEW",
+    EXPIRES_IN_X_DAYS = "EXPIRES_IN_X_DAYS",
+

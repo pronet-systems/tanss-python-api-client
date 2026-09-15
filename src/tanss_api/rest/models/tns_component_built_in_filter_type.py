@@ -1,0 +1,7 @@
+from enum import Enum
+
+class TnsComponentBuiltInFilterType(str, Enum):
+    NOT_BUILT_IN_COMPONENTS = "NOT_BUILT_IN_COMPONENTS",
+    COMPONENTS_IN_PCS = "COMPONENTS_IN_PCS",
+    COMPONENTS_IN_PERIPHERIES = "COMPONENTS_IN_PERIPHERIES",
+

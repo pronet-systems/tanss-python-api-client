@@ -1,0 +1,55 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tanss-api"
+version = "1.0.0"
+description = "Python-Client fuer die TANSS-REST-Schnittstelle, getestet gegen TANSS 10.10."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "ProNet Systems GmbH", email = "info@pronet-systems.de" }]
+keywords = ["tanss", "api", "client", "rest", "helpdesk"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = [
+    "microsoft-kiota-bundle>=1.9.4",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[project.urls]
+Homepage = "https://github.com/pronet-systems/tanss-python-api-client"
+Repository = "https://github.com/pronet-systems/tanss-python-api-client"
+Issues = "https://github.com/pronet-systems/tanss-python-api-client/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tanss_api"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"src/tanss_api/endpoint_index.json" = "tanss_api/endpoint_index.json"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/tanss_api", "README.md", "LICENSE", "pyproject.toml"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+# Der erzeugte Client fuehrt fuer jede Operation eine ueberholte Konfigurationsklasse mit; ihre
+# Warnung sagt nichts ueber die Bibliothek und uebertoente sonst den Bericht.
+filterwarnings = ["ignore:This class is deprecated.*:DeprecationWarning"]

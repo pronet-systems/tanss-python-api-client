@@ -1,0 +1,9 @@
+from enum import Enum
+
+class TnsEmployeeListType(str, Enum):
+    EMPLOYEE = "EMPLOYEE",
+    CONTACT_PERSON = "CONTACT_PERSON",
+    FREELANCER = "FREELANCER",
+    FREELANCER_CONTACT_PERSON = "FREELANCER_CONTACT_PERSON",
+    TECHNICIAN = "TECHNICIAN",
+

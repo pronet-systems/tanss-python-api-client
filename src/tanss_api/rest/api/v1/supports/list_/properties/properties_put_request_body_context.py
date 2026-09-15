@@ -1,0 +1,8 @@
+from enum import Enum
+
+class PropertiesPutRequestBody_context(str, Enum):
+    SUPPORT_HISTORY = "SUPPORT_HISTORY",
+    SUPPORT_STATISTICS_GENERAL = "SUPPORT_STATISTICS_GENERAL",
+    DEVICE_LIST = "DEVICE_LIST",
+    CLEAR_SUPPORTS = "CLEAR_SUPPORTS",
+

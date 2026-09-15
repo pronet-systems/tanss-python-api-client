@@ -1,0 +1,13 @@
+from enum import Enum
+
+class TimestampType(str, Enum):
+    WORK = "WORK",
+    INHOUSE = "INHOUSE",
+    ERRAND = "ERRAND",
+    VACATION = "VACATION",
+    ILLNESS = "ILLNESS",
+    ABSENCE_PAID = "ABSENCE_PAID",
+    ABSENCE_UNPAID = "ABSENCE_UNPAID",
+    OVERTIME = "OVERTIME",
+    DOCUMENTED_SUPPORT = "DOCUMENTED_SUPPORT",
+

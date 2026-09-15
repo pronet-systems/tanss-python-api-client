@@ -1,0 +1,15 @@
+from enum import Enum
+
+class PropertiesPostRequestBody_planningType(str, Enum):
+    NONE_ = "NONE",
+    SUPPORT = "SUPPORT",
+    APPOINTMENT_PROPOSAL = "APPOINTMENT_PROPOSAL",
+    APPOINTMENT_FIX = "APPOINTMENT_FIX",
+    VACATION = "VACATION",
+    ILLNESS = "ILLNESS",
+    ABSENCE = "ABSENCE",
+    STAND_BY = "STAND_BY",
+    APPOINTMENT_PRIVATE = "APPOINTMENT_PRIVATE",
+    OVERTIME = "OVERTIME",
+    CUSTOM = "CUSTOM",
+

@@ -1,0 +1,7 @@
+from enum import Enum
+
+class NextPostRequestBody_yearlyType(str, Enum):
+    NONE_ = "NONE",
+    ON_DAY_OF_MONTH_EVERY_X_YEARS = "ON_DAY_OF_MONTH_EVERY_X_YEARS",
+    ON_COUNTED_WEEKDAY_OF_MONTH_EVERY_X_YEARS = "ON_COUNTED_WEEKDAY_OF_MONTH_EVERY_X_YEARS",
+

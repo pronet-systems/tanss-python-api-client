@@ -1,0 +1,90 @@
+from __future__ import annotations
+from collections.abc import Callable
+from dataclasses import dataclass, field
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
+from kiota_abstractions.base_request_configuration import RequestConfiguration
+from kiota_abstractions.default_query_parameters import QueryParameters
+from kiota_abstractions.get_path_parameters import get_path_parameters
+from kiota_abstractions.method import Method
+from kiota_abstractions.request_adapter import RequestAdapter
+from kiota_abstractions.request_information import RequestInformation
+from kiota_abstractions.request_option import RequestOption
+from kiota_abstractions.serialization import Parsable, ParsableFactory
+from typing import Any, Optional, TYPE_CHECKING, Union
+from warnings import warn
+
+if TYPE_CHECKING:
+    from ......models.pdf403_error import Pdf403Error
+    from .pdf_get_response import PdfGetResponse
+
+class PdfRequestBuilder(BaseRequestBuilder):
+    """
+    Builds and executes requests for operations under /api/v1/softwarelicenses/{id}/pdf
+    """
+    def __init__(self,request_adapter: RequestAdapter, path_parameters: Union[str, dict[str, Any]]) -> None:
+        """
+        Instantiates a new PdfRequestBuilder and sets the default values.
+        param path_parameters: The raw url or the url-template parameters for the request.
+        param request_adapter: The request adapter to use to execute the requests.
+        Returns: None
+        """
+        super().__init__(request_adapter, "{+baseurl}/api/v1/softwarelicenses/{id}/pdf{?internal*}", path_parameters)
+    
+    async def get(self,request_configuration: Optional[RequestConfiguration[PdfRequestBuilderGetQueryParameters]] = None) -> Optional[PdfGetResponse]:
+        """
+        Generates a printable detail sheet for one license — fields, expiry, vendor, key, assignments. The `internal`flag toggles between the customer-facing layout and the internal version (which adds remarks/notes that are notmeant to leave the company). Honours the `Accept` header to either return the PDF inline or as the standard JSONenvelope with a download URL.
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: Optional[PdfGetResponse]
+        """
+        request_info = self.to_get_request_information(
+            request_configuration
+        )
+        from ......models.pdf403_error import Pdf403Error
+
+        error_mapping: dict[str, type[ParsableFactory]] = {
+            "403": Pdf403Error,
+        }
+        if not self.request_adapter:
+            raise Exception("Http core is null") 
+        from .pdf_get_response import PdfGetResponse
+
+        return await self.request_adapter.send_async(request_info, PdfGetResponse, error_mapping)
+    
+    def to_get_request_information(self,request_configuration: Optional[RequestConfiguration[PdfRequestBuilderGetQueryParameters]] = None) -> RequestInformation:
+        """
+        Generates a printable detail sheet for one license — fields, expiry, vendor, key, assignments. The `internal`flag toggles between the customer-facing layout and the internal version (which adds remarks/notes that are notmeant to leave the company). Honours the `Accept` header to either return the PDF inline or as the standard JSONenvelope with a download URL.
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: RequestInformation
+        """
+        request_info = RequestInformation(Method.GET, self.url_template, self.path_parameters)
+        request_info.configure(request_configuration)
+        request_info.headers.try_add("Accept", "application/json")
+        return request_info
+    
+    def with_url(self,raw_url: str) -> PdfRequestBuilder:
+        """
+        Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        param raw_url: The raw URL to use for the request builder.
+        Returns: PdfRequestBuilder
+        """
+        if raw_url is None:
+            raise TypeError("raw_url cannot be null.")
+        return PdfRequestBuilder(self.request_adapter, raw_url)
+    
+    @dataclass
+    class PdfRequestBuilderGetQueryParameters():
+        """
+        Generates a printable detail sheet for one license — fields, expiry, vendor, key, assignments. The `internal`flag toggles between the customer-facing layout and the internal version (which adds remarks/notes that are notmeant to leave the company). Honours the `Accept` header to either return the PDF inline or as the standard JSONenvelope with a download URL.
+        """
+        # Use the internal PDF layout (includes internal remarks/notes) instead of the customer-facing one
+        internal: Optional[bool] = None
+
+    
+    @dataclass
+    class PdfRequestBuilderGetRequestConfiguration(RequestConfiguration[PdfRequestBuilderGetQueryParameters]):
+        """
+        Configuration for the request such as headers, query parameters, and middleware options.
+        """
+        warn("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.", DeprecationWarning)
+    
+

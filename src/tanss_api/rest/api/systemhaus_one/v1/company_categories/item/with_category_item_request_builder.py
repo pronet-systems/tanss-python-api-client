@@ -1,0 +1,192 @@
+from __future__ import annotations
+from collections.abc import Callable
+from dataclasses import dataclass, field
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
+from kiota_abstractions.base_request_configuration import RequestConfiguration
+from kiota_abstractions.default_query_parameters import QueryParameters
+from kiota_abstractions.get_path_parameters import get_path_parameters
+from kiota_abstractions.method import Method
+from kiota_abstractions.request_adapter import RequestAdapter
+from kiota_abstractions.request_information import RequestInformation
+from kiota_abstractions.request_option import RequestOption
+from kiota_abstractions.serialization import Parsable, ParsableFactory
+from typing import Any, Optional, TYPE_CHECKING, Union
+from warnings import warn
+
+if TYPE_CHECKING:
+    from ......models.tns_company_category import TnsCompanyCategory
+    from .with_category_delete_response import WithCategoryDeleteResponse
+    from .with_category_get_response import WithCategoryGetResponse
+    from .with_category_post_response import WithCategoryPostResponse
+    from .with_category_put_response import WithCategoryPutResponse
+
+class WithCategoryItemRequestBuilder(BaseRequestBuilder):
+    """
+    Builds and executes requests for operations under /api/systemhaus_one/v1/companyCategories/{categoryId}
+    """
+    def __init__(self,request_adapter: RequestAdapter, path_parameters: Union[str, dict[str, Any]]) -> None:
+        """
+        Instantiates a new WithCategoryItemRequestBuilder and sets the default values.
+        param path_parameters: The raw url or the url-template parameters for the request.
+        param request_adapter: The request adapter to use to execute the requests.
+        Returns: None
+        """
+        super().__init__(request_adapter, "{+baseurl}/api/systemhaus_one/v1/companyCategories/{categoryId}", path_parameters)
+    
+    async def delete(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[WithCategoryDeleteResponse]:
+        """
+        Löscht eine Firmentyp-Kategorie.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: Benutzertyp TECHNICAN/COMPANY_ADMIN/RESTRICTED_USER/FREELANCER, BASE_DATA_MANAGEMENT_SYSTEM_TABLES.Hinweise: Lizenz SAP_ONE erforderlich. Nicht löschbar, wenn noch Firmentypen zugeordnet sind (CANNOT_DELETE_ENTITY_LINKED_ENTITIES). Nicht gefunden -> ENTITY_NOT_FOUND.
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: Optional[WithCategoryDeleteResponse]
+        """
+        request_info = self.to_delete_request_information(
+            request_configuration
+        )
+        if not self.request_adapter:
+            raise Exception("Http core is null") 
+        from .with_category_delete_response import WithCategoryDeleteResponse
+
+        return await self.request_adapter.send_async(request_info, WithCategoryDeleteResponse, None)
+    
+    async def get(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[WithCategoryGetResponse]:
+        """
+        Liefert eine Firmentyp-Kategorie inkl. ihrer Firmentypen.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: Benutzertyp TECHNICAN/COMPANY_ADMIN/RESTRICTED_USER/FREELANCER.Hinweise: Lizenz SAP_ONE erforderlich. types wird nachgeladen. Nicht gefunden -> OBJECT_NOT_FOUND.
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: Optional[WithCategoryGetResponse]
+        """
+        request_info = self.to_get_request_information(
+            request_configuration
+        )
+        if not self.request_adapter:
+            raise Exception("Http core is null") 
+        from .with_category_get_response import WithCategoryGetResponse
+
+        return await self.request_adapter.send_async(request_info, WithCategoryGetResponse, None)
+    
+    async def post(self,body: TnsCompanyCategory, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[WithCategoryPostResponse]:
+        """
+        Legt eine neue Firmentyp-Kategorie an.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: Benutzertyp TECHNICAN/COMPANY_ADMIN/RESTRICTED_USER/FREELANCER, BASE_DATA_MANAGEMENT_SYSTEM_TABLES.Hinweise: Lizenz SAP_ONE erforderlich. Quirk: {categoryId} im Pfad wird nicht gebunden und ignoriert (beliebiger Wert). "id" im Body wird entfernt, "types" nicht persistiert. Leerer Body -> TnsJsonException.
+        param body: defines a company category
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: Optional[WithCategoryPostResponse]
+        """
+        if body is None:
+            raise TypeError("body cannot be null.")
+        request_info = self.to_post_request_information(
+            body, request_configuration
+        )
+        if not self.request_adapter:
+            raise Exception("Http core is null") 
+        from .with_category_post_response import WithCategoryPostResponse
+
+        return await self.request_adapter.send_async(request_info, WithCategoryPostResponse, None)
+    
+    async def put(self,body: TnsCompanyCategory, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[WithCategoryPutResponse]:
+        """
+        Aktualisiert eine Firmentyp-Kategorie per JSON-Merge.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: Benutzertyp TECHNICAN/COMPANY_ADMIN/RESTRICTED_USER/FREELANCER, BASE_DATA_MANAGEMENT_SYSTEM_TABLES.Hinweise: Lizenz SAP_ONE erforderlich. Teilobjekt; "id" wird ignoriert. Leerer Body -> TnsJsonException; nicht gefunden -> ENTITY_NOT_FOUND.
+        param body: defines a company category
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: Optional[WithCategoryPutResponse]
+        """
+        if body is None:
+            raise TypeError("body cannot be null.")
+        request_info = self.to_put_request_information(
+            body, request_configuration
+        )
+        if not self.request_adapter:
+            raise Exception("Http core is null") 
+        from .with_category_put_response import WithCategoryPutResponse
+
+        return await self.request_adapter.send_async(request_info, WithCategoryPutResponse, None)
+    
+    def to_delete_request_information(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
+        """
+        Löscht eine Firmentyp-Kategorie.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: Benutzertyp TECHNICAN/COMPANY_ADMIN/RESTRICTED_USER/FREELANCER, BASE_DATA_MANAGEMENT_SYSTEM_TABLES.Hinweise: Lizenz SAP_ONE erforderlich. Nicht löschbar, wenn noch Firmentypen zugeordnet sind (CANNOT_DELETE_ENTITY_LINKED_ENTITIES). Nicht gefunden -> ENTITY_NOT_FOUND.
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: RequestInformation
+        """
+        request_info = RequestInformation(Method.DELETE, self.url_template, self.path_parameters)
+        request_info.configure(request_configuration)
+        request_info.headers.try_add("Accept", "application/json")
+        return request_info
+    
+    def to_get_request_information(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
+        """
+        Liefert eine Firmentyp-Kategorie inkl. ihrer Firmentypen.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: Benutzertyp TECHNICAN/COMPANY_ADMIN/RESTRICTED_USER/FREELANCER.Hinweise: Lizenz SAP_ONE erforderlich. types wird nachgeladen. Nicht gefunden -> OBJECT_NOT_FOUND.
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: RequestInformation
+        """
+        request_info = RequestInformation(Method.GET, self.url_template, self.path_parameters)
+        request_info.configure(request_configuration)
+        request_info.headers.try_add("Accept", "application/json")
+        return request_info
+    
+    def to_post_request_information(self,body: TnsCompanyCategory, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
+        """
+        Legt eine neue Firmentyp-Kategorie an.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: Benutzertyp TECHNICAN/COMPANY_ADMIN/RESTRICTED_USER/FREELANCER, BASE_DATA_MANAGEMENT_SYSTEM_TABLES.Hinweise: Lizenz SAP_ONE erforderlich. Quirk: {categoryId} im Pfad wird nicht gebunden und ignoriert (beliebiger Wert). "id" im Body wird entfernt, "types" nicht persistiert. Leerer Body -> TnsJsonException.
+        param body: defines a company category
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: RequestInformation
+        """
+        if body is None:
+            raise TypeError("body cannot be null.")
+        request_info = RequestInformation(Method.POST, self.url_template, self.path_parameters)
+        request_info.configure(request_configuration)
+        request_info.headers.try_add("Accept", "application/json")
+        request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+        return request_info
+    
+    def to_put_request_information(self,body: TnsCompanyCategory, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
+        """
+        Aktualisiert eine Firmentyp-Kategorie per JSON-Merge.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: Benutzertyp TECHNICAN/COMPANY_ADMIN/RESTRICTED_USER/FREELANCER, BASE_DATA_MANAGEMENT_SYSTEM_TABLES.Hinweise: Lizenz SAP_ONE erforderlich. Teilobjekt; "id" wird ignoriert. Leerer Body -> TnsJsonException; nicht gefunden -> ENTITY_NOT_FOUND.
+        param body: defines a company category
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: RequestInformation
+        """
+        if body is None:
+            raise TypeError("body cannot be null.")
+        request_info = RequestInformation(Method.PUT, self.url_template, self.path_parameters)
+        request_info.configure(request_configuration)
+        request_info.headers.try_add("Accept", "application/json")
+        request_info.set_content_from_parsable(self.request_adapter, "application/json", body)
+        return request_info
+    
+    def with_url(self,raw_url: str) -> WithCategoryItemRequestBuilder:
+        """
+        Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        param raw_url: The raw URL to use for the request builder.
+        Returns: WithCategoryItemRequestBuilder
+        """
+        if raw_url is None:
+            raise TypeError("raw_url cannot be null.")
+        return WithCategoryItemRequestBuilder(self.request_adapter, raw_url)
+    
+    @dataclass
+    class WithCategoryItemRequestBuilderDeleteRequestConfiguration(RequestConfiguration[QueryParameters]):
+        """
+        Configuration for the request such as headers, query parameters, and middleware options.
+        """
+        warn("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.", DeprecationWarning)
+    
+    @dataclass
+    class WithCategoryItemRequestBuilderGetRequestConfiguration(RequestConfiguration[QueryParameters]):
+        """
+        Configuration for the request such as headers, query parameters, and middleware options.
+        """
+        warn("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.", DeprecationWarning)
+    
+    @dataclass
+    class WithCategoryItemRequestBuilderPostRequestConfiguration(RequestConfiguration[QueryParameters]):
+        """
+        Configuration for the request such as headers, query parameters, and middleware options.
+        """
+        warn("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.", DeprecationWarning)
+    
+    @dataclass
+    class WithCategoryItemRequestBuilderPutRequestConfiguration(RequestConfiguration[QueryParameters]):
+        """
+        Configuration for the request such as headers, query parameters, and middleware options.
+        """
+        warn("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.", DeprecationWarning)
+    
+

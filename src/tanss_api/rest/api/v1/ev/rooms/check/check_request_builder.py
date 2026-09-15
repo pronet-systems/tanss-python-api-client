@@ -1,0 +1,111 @@
+from __future__ import annotations
+from collections.abc import Callable
+from dataclasses import dataclass, field
+from kiota_abstractions.base_request_builder import BaseRequestBuilder
+from kiota_abstractions.base_request_configuration import RequestConfiguration
+from kiota_abstractions.default_query_parameters import QueryParameters
+from kiota_abstractions.get_path_parameters import get_path_parameters
+from kiota_abstractions.method import Method
+from kiota_abstractions.request_adapter import RequestAdapter
+from kiota_abstractions.request_information import RequestInformation
+from kiota_abstractions.request_option import RequestOption
+from kiota_abstractions.serialization import Parsable, ParsableFactory
+from typing import Any, Optional, TYPE_CHECKING, Union
+from warnings import warn
+
+if TYPE_CHECKING:
+    from .check_get_response import CheckGetResponse
+
+class CheckRequestBuilder(BaseRequestBuilder):
+    """
+    Builds and executes requests for operations under /api/v1/ev/rooms/check
+    """
+    def __init__(self,request_adapter: RequestAdapter, path_parameters: Union[str, dict[str, Any]]) -> None:
+        """
+        Instantiates a new CheckRequestBuilder and sets the default values.
+        param path_parameters: The raw url or the url-template parameters for the request.
+        param request_adapter: The request adapter to use to execute the requests.
+        Returns: None
+        """
+        super().__init__(request_adapter, "{+baseurl}/api/v1/ev/rooms/check?duration={duration}&roomId={roomId}&start={start}&supportId={supportId}", path_parameters)
+    
+    async def get(self,request_configuration: Optional[RequestConfiguration[CheckRequestBuilderGetQueryParameters]] = None) -> Optional[CheckGetResponse]:
+        """
+        Prüft, ob ein Raum im Zeitraum (start/duration) für den Support verfügbar ist.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Firmenzugriff auf Support-Firma (nur wenn supportId != 0).Hinweise: Proxy auf Coero GET /api/v1/tns/rooms/check/. Fehler -> TnsCoeroBadRequestException (400).
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: Optional[CheckGetResponse]
+        """
+        request_info = self.to_get_request_information(
+            request_configuration
+        )
+        if not self.request_adapter:
+            raise Exception("Http core is null") 
+        from .check_get_response import CheckGetResponse
+
+        return await self.request_adapter.send_async(request_info, CheckGetResponse, None)
+    
+    def to_get_request_information(self,request_configuration: Optional[RequestConfiguration[CheckRequestBuilderGetQueryParameters]] = None) -> RequestInformation:
+        """
+        Prüft, ob ein Raum im Zeitraum (start/duration) für den Support verfügbar ist.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Firmenzugriff auf Support-Firma (nur wenn supportId != 0).Hinweise: Proxy auf Coero GET /api/v1/tns/rooms/check/. Fehler -> TnsCoeroBadRequestException (400).
+        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Returns: RequestInformation
+        """
+        request_info = RequestInformation(Method.GET, self.url_template, self.path_parameters)
+        request_info.configure(request_configuration)
+        request_info.headers.try_add("Accept", "application/json")
+        return request_info
+    
+    def with_url(self,raw_url: str) -> CheckRequestBuilder:
+        """
+        Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
+        param raw_url: The raw URL to use for the request builder.
+        Returns: CheckRequestBuilder
+        """
+        if raw_url is None:
+            raise TypeError("raw_url cannot be null.")
+        return CheckRequestBuilder(self.request_adapter, raw_url)
+    
+    @dataclass
+    class CheckRequestBuilderGetQueryParameters():
+        """
+        Prüft, ob ein Raum im Zeitraum (start/duration) für den Support verfügbar ist.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Firmenzugriff auf Support-Firma (nur wenn supportId != 0).Hinweise: Proxy auf Coero GET /api/v1/tns/rooms/check/. Fehler -> TnsCoeroBadRequestException (400).
+        """
+        def get_query_parameter(self,original_name: str) -> str:
+            """
+            Maps the query parameters names to their encoded names for the URI template parsing.
+            param original_name: The original query parameter name in the class.
+            Returns: str
+            """
+            if original_name is None:
+                raise TypeError("original_name cannot be null.")
+            if original_name == "room_id":
+                return "roomId"
+            if original_name == "support_id":
+                return "supportId"
+            if original_name == "duration":
+                return "duration"
+            if original_name == "start":
+                return "start"
+            return original_name
+        
+        # Dauer
+        duration: Optional[int] = None
+
+        # Raum-ID
+        room_id: Optional[int] = None
+
+        # Startzeitpunkt (Unix-Timestamp)
+        start: Optional[int] = None
+
+        # Support-ID (0 = ohne Support-Bezug)
+        support_id: Optional[int] = None
+
+    
+    @dataclass
+    class CheckRequestBuilderGetRequestConfiguration(RequestConfiguration[CheckRequestBuilderGetQueryParameters]):
+        """
+        Configuration for the request such as headers, query parameters, and middleware options.
+        """
+        warn("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.", DeprecationWarning)
+    
+
