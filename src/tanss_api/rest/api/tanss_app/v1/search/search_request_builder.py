@@ -32,7 +32,7 @@ class SearchRequestBuilder(BaseRequestBuilder):
     
     async def put(self,body: TnsSearchConfiguration, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[SearchPutResponse]:
         """
-        Alias von PUT /api/v1/search - globale Suche ueber mehrere Bereiche. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Delegiert 1:1 an die gleichnamige Route unter /api/v1; Rechte/Filter im Service nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von PUT /api/v1/search - globale Suche ueber mehrere Bereiche. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Delegiert 1:1 an die gleichnamige Route unter /api/v1; Die nötigen Rechte sind nicht dokumentiert. Auch unter /api/tanss.x/v1.
         param body: object representing a definition for searching in misc. areas
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[SearchPutResponse]
@@ -50,7 +50,7 @@ class SearchRequestBuilder(BaseRequestBuilder):
     
     def to_put_request_information(self,body: TnsSearchConfiguration, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Alias von PUT /api/v1/search - globale Suche ueber mehrere Bereiche. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Delegiert 1:1 an die gleichnamige Route unter /api/v1; Rechte/Filter im Service nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von PUT /api/v1/search - globale Suche ueber mehrere Bereiche. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Delegiert 1:1 an die gleichnamige Route unter /api/v1; Die nötigen Rechte sind nicht dokumentiert. Auch unter /api/tanss.x/v1.
         param body: object representing a definition for searching in misc. areas
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation

@@ -33,7 +33,7 @@ class RecurrenceRequestBuilder(BaseRequestBuilder):
     
     async def post(self,body: RecurrencePostRequestBody, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[RecurrencePostResponse]:
         """
-        Alias von POST /api/v1/recurrence - legt eine Wiederholungsregel (TnsRecurrenceRule) an. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Rechtepruefung im Service nicht analysiert. Status CREATED. Auch unter /api/tanss.x/v1.
+        Alias von POST /api/v1/recurrence - legt eine Wiederholungsregel (TnsRecurrenceRule) an. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Die nötigen Rechte sind nicht dokumentiert. Status CREATED. Auch unter /api/tanss.x/v1.
         param body: The request body
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[RecurrencePostResponse]
@@ -51,7 +51,7 @@ class RecurrenceRequestBuilder(BaseRequestBuilder):
     
     def to_post_request_information(self,body: RecurrencePostRequestBody, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Alias von POST /api/v1/recurrence - legt eine Wiederholungsregel (TnsRecurrenceRule) an. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Rechtepruefung im Service nicht analysiert. Status CREATED. Auch unter /api/tanss.x/v1.
+        Alias von POST /api/v1/recurrence - legt eine Wiederholungsregel (TnsRecurrenceRule) an. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Die nötigen Rechte sind nicht dokumentiert. Status CREATED. Auch unter /api/tanss.x/v1.
         param body: The request body
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation

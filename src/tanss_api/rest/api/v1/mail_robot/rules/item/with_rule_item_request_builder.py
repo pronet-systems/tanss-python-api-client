@@ -50,7 +50,7 @@ class WithRuleItemRequestBuilder(BaseRequestBuilder):
     
     async def get(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[WithRuleGetResponse]:
         """
-        Liefert eine Mailroboter-Regel mit Aktionen und Bedingungen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId. Rechte: licModule(MAILROBOT), companyAccess(-1) (eigene Firma), bet.MANAGE_MAIL_ROBOT_RULES. Hinweise: 404 'Rule was not found!'. Das Regel-DTO (Klasse cdw) trägt kein @KeepClass, Feld-/Getter-Namen sind im Build obfuskiert; die tatsächlichen JSON-Schlüssel sind daher unsicher - Namen aus der Entity TnsMailRobotRule abgeleitet.
+        Liefert eine Mailroboter-Regel mit Aktionen und Bedingungen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId. Rechte: licModule(MAILROBOT), companyAccess(-1) (eigene Firma), bet.MANAGE_MAIL_ROBOT_RULES. Hinweise: 404 'Rule was not found!'. Das Regel-DTO (Klasse cdw) trägt kein @KeepClass, Die JSON-Schlüssel sind nicht dokumentiert und daher unsicher.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[WithRuleGetResponse]
         """
@@ -65,8 +65,8 @@ class WithRuleItemRequestBuilder(BaseRequestBuilder):
     
     async def put(self,body: TnsMailRobotRule, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[WithRulePutResponse]:
         """
-        Aktualisiert eine Mailroboter-Regel komplett (Stammdaten, Aktionen und Bedingungen werden ersetzt). Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId. Rechte: licModule(MAILROBOT), companyAccess(-1) (eigene Firma), bet.MANAGE_MAIL_ROBOT_RULES. Hinweise: Body-ID wird durch {ruleId} ersetzt; Aktionen/Bedingungen werden neu gespeichert. 404 'could not convert rule to rule object!' bei null-Body, 404 'Rule was not found!' falls danach nicht ladbar. Antwort-Status UPDATED. JSON-Schlüssel wegen Obfuskation unsicher.
-        param body: Mailroboter-Regel mit Aktionen und Bedingungen. Feldnamen aus der Entity TnsMailRobotRule abgeleitet (DTO im Build obfuskiert, JSON-Schlüssel unsicher).
+        Aktualisiert eine Mailroboter-Regel komplett (Stammdaten, Aktionen und Bedingungen werden ersetzt). Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId. Rechte: licModule(MAILROBOT), companyAccess(-1) (eigene Firma), bet.MANAGE_MAIL_ROBOT_RULES. Hinweise: Body-ID wird durch {ruleId} ersetzt; Aktionen/Bedingungen werden neu gespeichert. 404 'could not convert rule to rule object!' bei null-Body, 404 'Rule was not found!' falls danach nicht ladbar. Antwort-Status UPDATED. JSON-Schlüssel nicht dokumentiert und daher unsicher.
+        param body: Mailroboter-Regel mit Aktionen und Bedingungen. Die JSON-Schlüssel sind nicht dokumentiert und daher unsicher.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[WithRulePutResponse]
         """
@@ -94,7 +94,7 @@ class WithRuleItemRequestBuilder(BaseRequestBuilder):
     
     def to_get_request_information(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Liefert eine Mailroboter-Regel mit Aktionen und Bedingungen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId. Rechte: licModule(MAILROBOT), companyAccess(-1) (eigene Firma), bet.MANAGE_MAIL_ROBOT_RULES. Hinweise: 404 'Rule was not found!'. Das Regel-DTO (Klasse cdw) trägt kein @KeepClass, Feld-/Getter-Namen sind im Build obfuskiert; die tatsächlichen JSON-Schlüssel sind daher unsicher - Namen aus der Entity TnsMailRobotRule abgeleitet.
+        Liefert eine Mailroboter-Regel mit Aktionen und Bedingungen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId. Rechte: licModule(MAILROBOT), companyAccess(-1) (eigene Firma), bet.MANAGE_MAIL_ROBOT_RULES. Hinweise: 404 'Rule was not found!'. Das Regel-DTO (Klasse cdw) trägt kein @KeepClass, Die JSON-Schlüssel sind nicht dokumentiert und daher unsicher.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
         """
@@ -105,8 +105,8 @@ class WithRuleItemRequestBuilder(BaseRequestBuilder):
     
     def to_put_request_information(self,body: TnsMailRobotRule, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Aktualisiert eine Mailroboter-Regel komplett (Stammdaten, Aktionen und Bedingungen werden ersetzt). Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId. Rechte: licModule(MAILROBOT), companyAccess(-1) (eigene Firma), bet.MANAGE_MAIL_ROBOT_RULES. Hinweise: Body-ID wird durch {ruleId} ersetzt; Aktionen/Bedingungen werden neu gespeichert. 404 'could not convert rule to rule object!' bei null-Body, 404 'Rule was not found!' falls danach nicht ladbar. Antwort-Status UPDATED. JSON-Schlüssel wegen Obfuskation unsicher.
-        param body: Mailroboter-Regel mit Aktionen und Bedingungen. Feldnamen aus der Entity TnsMailRobotRule abgeleitet (DTO im Build obfuskiert, JSON-Schlüssel unsicher).
+        Aktualisiert eine Mailroboter-Regel komplett (Stammdaten, Aktionen und Bedingungen werden ersetzt). Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId. Rechte: licModule(MAILROBOT), companyAccess(-1) (eigene Firma), bet.MANAGE_MAIL_ROBOT_RULES. Hinweise: Body-ID wird durch {ruleId} ersetzt; Aktionen/Bedingungen werden neu gespeichert. 404 'could not convert rule to rule object!' bei null-Body, 404 'Rule was not found!' falls danach nicht ladbar. Antwort-Status UPDATED. JSON-Schlüssel nicht dokumentiert und daher unsicher.
+        param body: Mailroboter-Regel mit Aktionen und Bedingungen. Die JSON-Schlüssel sind nicht dokumentiert und daher unsicher.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
         """

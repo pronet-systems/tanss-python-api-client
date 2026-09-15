@@ -32,7 +32,7 @@ class PropertiesRequestBuilder(BaseRequestBuilder):
     
     async def post(self,body: TnsSupport, request_configuration: Optional[RequestConfiguration[PropertiesRequestBuilderPostQueryParameters]] = None) -> Optional[PropertiesPostResponse]:
         """
-        Alias von POST /api/v1/supports/properties - berechnet abhaengige Felder/Meta-Properties einer (ungespeicherten) Taetigkeit nach Aenderung des Feldes changedProperty. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Berechnungsservice nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von POST /api/v1/supports/properties - berechnet abhaengige Felder/Meta-Properties einer (ungespeicherten) Taetigkeit nach Aenderung des Feldes changedProperty. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.x/v1.
         param body: describes a support entry (same for appointment)
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[PropertiesPostResponse]
@@ -50,7 +50,7 @@ class PropertiesRequestBuilder(BaseRequestBuilder):
     
     def to_post_request_information(self,body: TnsSupport, request_configuration: Optional[RequestConfiguration[PropertiesRequestBuilderPostQueryParameters]] = None) -> RequestInformation:
         """
-        Alias von POST /api/v1/supports/properties - berechnet abhaengige Felder/Meta-Properties einer (ungespeicherten) Taetigkeit nach Aenderung des Feldes changedProperty. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Berechnungsservice nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von POST /api/v1/supports/properties - berechnet abhaengige Felder/Meta-Properties einer (ungespeicherten) Taetigkeit nach Aenderung des Feldes changedProperty. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.x/v1.
         param body: describes a support entry (same for appointment)
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
@@ -76,7 +76,7 @@ class PropertiesRequestBuilder(BaseRequestBuilder):
     @dataclass
     class PropertiesRequestBuilderPostQueryParameters():
         """
-        Alias von POST /api/v1/supports/properties - berechnet abhaengige Felder/Meta-Properties einer (ungespeicherten) Taetigkeit nach Aenderung des Feldes changedProperty. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Berechnungsservice nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von POST /api/v1/supports/properties - berechnet abhaengige Felder/Meta-Properties einer (ungespeicherten) Taetigkeit nach Aenderung des Feldes changedProperty. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.x/v1.
         """
         def get_query_parameter(self,original_name: str) -> str:
             """

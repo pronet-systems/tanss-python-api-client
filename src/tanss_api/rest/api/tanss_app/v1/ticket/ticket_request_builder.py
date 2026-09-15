@@ -51,7 +51,7 @@ class TicketRequestBuilder(BaseRequestBuilder):
     
     async def post(self,body: TicketSave, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[TicketPostResponse]:
         """
-        Alias von POST /api/v1/tickets mit remitterCheck=false - legt ein Ticket an. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Vorab-Check im Ticket-Controller nicht analysiert. Status CREATED. Auch unter /api/tanss.x/v1.
+        Alias von POST /api/v1/tickets mit remitterCheck=false - legt ein Ticket an. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Status CREATED. Auch unter /api/tanss.x/v1.
         param body: ticket model to be saved
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[TicketPostResponse]
@@ -87,7 +87,7 @@ class TicketRequestBuilder(BaseRequestBuilder):
     
     def to_post_request_information(self,body: TicketSave, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Alias von POST /api/v1/tickets mit remitterCheck=false - legt ein Ticket an. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Vorab-Check im Ticket-Controller nicht analysiert. Status CREATED. Auch unter /api/tanss.x/v1.
+        Alias von POST /api/v1/tickets mit remitterCheck=false - legt ein Ticket an. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Status CREATED. Auch unter /api/tanss.x/v1.
         param body: ticket model to be saved
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation

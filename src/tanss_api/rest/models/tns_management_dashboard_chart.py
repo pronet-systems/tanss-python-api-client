@@ -19,7 +19,7 @@ class TnsManagementDashboardChart(AdditionalDataHolder, Parsable):
 
     # ID der zugehörigen Collection
     collection_id: Optional[int] = None
-    # Filter eines Dashboard-Charts. DOUGHNUT: incomingTags + sortingTags; FUNNEL: incomingTags + stages.Die Elementtypen der Arrays sind nicht analysiert (vermutlich Tag-IDs bzw. Stufen-Objekte).
+    # Filter eines Dashboard-Charts. DOUGHNUT: incomingTags + sortingTags; FUNNEL: incomingTags + stages.Die Elementtypen der Arrays sind nicht dokumentiert (vermutlich Tag-IDs bzw. Stufen-Objekte).
     filter: Optional[TnsManagementDashboardChartFilter] = None
     # The id property
     id: Optional[int] = None

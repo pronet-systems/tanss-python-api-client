@@ -31,7 +31,7 @@ class MailRequestBuilder(BaseRequestBuilder):
     
     async def post(self,body: str, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[MailPostResponse]:
         """
-        Hängt eine rohe E-Mail (EML/MIME) an ein Ticket an; die Mail wird geparst und als Ticket-Mail gespeichert. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.app/v1. Body ist ein String (kein JSON), Content-Type text/plain. internal-Flag wird aus Absenderadresse vs. Ticket-Firma und Systemkonfiguration bestimmt. Kein Rechte-Check im Controller sichtbar. meta.status UPDATED obwohl neu angelegt.
+        Hängt eine rohe E-Mail (EML/MIME) an ein Ticket an; die Mail wird geparst und als Ticket-Mail gespeichert. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.app/v1. Body ist ein String (kein JSON), Content-Type text/plain. internal-Flag wird aus Absenderadresse vs. Ticket-Firma und Systemkonfiguration bestimmt. Eine eigene Rechteprüfung ist nicht dokumentiert. meta.status UPDATED obwohl neu angelegt.
         param body: Vollständige E-Mail im EML/MIME-Format.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[MailPostResponse]
@@ -49,7 +49,7 @@ class MailRequestBuilder(BaseRequestBuilder):
     
     def to_post_request_information(self,body: str, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Hängt eine rohe E-Mail (EML/MIME) an ein Ticket an; die Mail wird geparst und als Ticket-Mail gespeichert. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.app/v1. Body ist ein String (kein JSON), Content-Type text/plain. internal-Flag wird aus Absenderadresse vs. Ticket-Firma und Systemkonfiguration bestimmt. Kein Rechte-Check im Controller sichtbar. meta.status UPDATED obwohl neu angelegt.
+        Hängt eine rohe E-Mail (EML/MIME) an ein Ticket an; die Mail wird geparst und als Ticket-Mail gespeichert. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.app/v1. Body ist ein String (kein JSON), Content-Type text/plain. internal-Flag wird aus Absenderadresse vs. Ticket-Firma und Systemkonfiguration bestimmt. Eine eigene Rechteprüfung ist nicht dokumentiert. meta.status UPDATED obwohl neu angelegt.
         param body: Vollständige E-Mail im EML/MIME-Format.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation

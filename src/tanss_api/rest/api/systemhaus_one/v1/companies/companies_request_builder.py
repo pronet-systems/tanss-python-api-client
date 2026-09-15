@@ -50,7 +50,7 @@ class CompaniesRequestBuilder(BaseRequestBuilder):
     
     async def post(self,body: CompanyPost, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[CompaniesPostResponse]:
         """
-        Legt eine neue Firma an (delegiert 1:1 an den offiziellen Handler POST /api/v1/companies).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: MANAGE_COMPANIES, Zugriffstyp COMPANY_ADMIN.Hinweise: Keine SAP_ONE-Lizenzprüfung (kein this.do()). Verhalten identisch zu POST /api/v1/companies (Create-Vorprüfung, Headquarter-Validierung); "id" im Body wird vor dem Mapping entfernt.
+        Legt eine neue Firma an (entspricht POST /api/v1/companies).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: MANAGE_COMPANIES, Zugriffstyp COMPANY_ADMIN.Hinweise: Keine SAP_ONE-Lizenzprüfung (kein this.do()). Verhalten identisch zu POST /api/v1/companies (Create-Vorprüfung, Headquarter-Validierung); "id" im Body wird vor dem Mapping entfernt.
         param body: Company object to be saved.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[CompaniesPostResponse]
@@ -68,7 +68,7 @@ class CompaniesRequestBuilder(BaseRequestBuilder):
     
     def to_post_request_information(self,body: CompanyPost, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Legt eine neue Firma an (delegiert 1:1 an den offiziellen Handler POST /api/v1/companies).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: MANAGE_COMPANIES, Zugriffstyp COMPANY_ADMIN.Hinweise: Keine SAP_ONE-Lizenzprüfung (kein this.do()). Verhalten identisch zu POST /api/v1/companies (Create-Vorprüfung, Headquarter-Validierung); "id" im Body wird vor dem Mapping entfernt.
+        Legt eine neue Firma an (entspricht POST /api/v1/companies).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen SYSTEMHAUS_ONE.Rechte: MANAGE_COMPANIES, Zugriffstyp COMPANY_ADMIN.Hinweise: Keine SAP_ONE-Lizenzprüfung (kein this.do()). Verhalten identisch zu POST /api/v1/companies (Create-Vorprüfung, Headquarter-Validierung); "id" im Body wird vor dem Mapping entfernt.
         param body: Company object to be saved.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation

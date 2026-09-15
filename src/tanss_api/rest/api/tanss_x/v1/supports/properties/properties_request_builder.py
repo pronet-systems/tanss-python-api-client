@@ -32,7 +32,7 @@ class PropertiesRequestBuilder(BaseRequestBuilder):
     
     async def post(self,body: TnsSupportCreate, request_configuration: Optional[RequestConfiguration[PropertiesRequestBuilderPostQueryParameters]] = None) -> Optional[PropertiesPostResponse]:
         """
-        Berechnet abhängige Eigenschaften/Vorschlagswerte für einen (noch nicht gespeicherten) Support (Alias zu POST /api/v1/supports/properties).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. Query changedProperty (Default ""): Name des geänderten Feldes; initAllFields (Default false): alle Felder neu initialisieren. Logik im Service nicht geöffnet; keine Rechte-Konstanten sichtbar.
+        Berechnet abhängige Eigenschaften/Vorschlagswerte für einen (noch nicht gespeicherten) Support (Alias zu POST /api/v1/supports/properties).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. Query changedProperty (Default ""): Name des geänderten Feldes; initAllFields (Default false): alle Felder neu initialisieren. Die Logik und die nötigen Rechte sind nicht dokumentiert.
         param body: The request body
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[PropertiesPostResponse]
@@ -50,7 +50,7 @@ class PropertiesRequestBuilder(BaseRequestBuilder):
     
     def to_post_request_information(self,body: TnsSupportCreate, request_configuration: Optional[RequestConfiguration[PropertiesRequestBuilderPostQueryParameters]] = None) -> RequestInformation:
         """
-        Berechnet abhängige Eigenschaften/Vorschlagswerte für einen (noch nicht gespeicherten) Support (Alias zu POST /api/v1/supports/properties).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. Query changedProperty (Default ""): Name des geänderten Feldes; initAllFields (Default false): alle Felder neu initialisieren. Logik im Service nicht geöffnet; keine Rechte-Konstanten sichtbar.
+        Berechnet abhängige Eigenschaften/Vorschlagswerte für einen (noch nicht gespeicherten) Support (Alias zu POST /api/v1/supports/properties).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. Query changedProperty (Default ""): Name des geänderten Feldes; initAllFields (Default false): alle Felder neu initialisieren. Die Logik und die nötigen Rechte sind nicht dokumentiert.
         param body: The request body
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
@@ -76,7 +76,7 @@ class PropertiesRequestBuilder(BaseRequestBuilder):
     @dataclass
     class PropertiesRequestBuilderPostQueryParameters():
         """
-        Berechnet abhängige Eigenschaften/Vorschlagswerte für einen (noch nicht gespeicherten) Support (Alias zu POST /api/v1/supports/properties).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. Query changedProperty (Default ""): Name des geänderten Feldes; initAllFields (Default false): alle Felder neu initialisieren. Logik im Service nicht geöffnet; keine Rechte-Konstanten sichtbar.
+        Berechnet abhängige Eigenschaften/Vorschlagswerte für einen (noch nicht gespeicherten) Support (Alias zu POST /api/v1/supports/properties).Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. Query changedProperty (Default ""): Name des geänderten Feldes; initAllFields (Default false): alle Felder neu initialisieren. Die Logik und die nötigen Rechte sind nicht dokumentiert.
         """
         def get_query_parameter(self,original_name: str) -> str:
             """

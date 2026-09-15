@@ -32,7 +32,7 @@ class ActionRequestBuilder(BaseRequestBuilder):
     
     async def put(self,body: TnsTanssEventRuleActionTestOptions, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[ActionPutResponse]:
         """
-        Alias von PUT /api/v1/tanssEvents/rules/test/action - fuehrt eine Regel-Aktion testweise fuer ein Objekt aus. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Rechte: bet.ADMINISTRATE_TANSS_EVENT_RULES. Hinweise: Status CREATED. Ergebnisobjekt der Aktion unbekannt; Testservice nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von PUT /api/v1/tanssEvents/rules/test/action - fuehrt eine Regel-Aktion testweise fuer ein Objekt aus. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Rechte: bet.ADMINISTRATE_TANSS_EVENT_RULES. Hinweise: Status CREATED. Ergebnisobjekt der Aktion unbekannt; Auch unter /api/tanss.x/v1.
         param body: defines the infos needed to trigger a rule test action
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[ActionPutResponse]
@@ -50,7 +50,7 @@ class ActionRequestBuilder(BaseRequestBuilder):
     
     def to_put_request_information(self,body: TnsTanssEventRuleActionTestOptions, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Alias von PUT /api/v1/tanssEvents/rules/test/action - fuehrt eine Regel-Aktion testweise fuer ein Objekt aus. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Rechte: bet.ADMINISTRATE_TANSS_EVENT_RULES. Hinweise: Status CREATED. Ergebnisobjekt der Aktion unbekannt; Testservice nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von PUT /api/v1/tanssEvents/rules/test/action - fuehrt eine Regel-Aktion testweise fuer ein Objekt aus. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Rechte: bet.ADMINISTRATE_TANSS_EVENT_RULES. Hinweise: Status CREATED. Ergebnisobjekt der Aktion unbekannt; Auch unter /api/tanss.x/v1.
         param body: defines the infos needed to trigger a rule test action
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation

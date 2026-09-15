@@ -31,8 +31,7 @@ class ChecklistsRequestBuilder(BaseRequestBuilder):
     
     async def get(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[ChecklistsGetResponse]:
         """
-        Liefert alle aktiven Checklisten-Definitionen (Typ CHECKLIST), die keiner bestimmten Firma zugeordnet sind.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. linkId=0 (Definitionen), type=CHECKLIST, active=true; Checklisten mit Firmenzuordnung werden ausgeschlossen, da keine companyId/departmentId übergeben wird. Kein Rechte-Check im Controller sichtbar.
-        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Liefert alle aktiven Checklisten-Definitionen (Typ CHECKLIST), die keiner bestimmten Firma zugeordnet sind.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. linkId=0 (Definitionen), type=CHECKLIST, active=true; Checklisten mit Firmenzuordnung werden ausgeschlossen, da keine companyId/departmentId übergeben wird. Eine eigene Rechteprüfung ist nicht dokumentiert. param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[ChecklistsGetResponse]
         """
         request_info = self.to_get_request_information(
@@ -46,8 +45,7 @@ class ChecklistsRequestBuilder(BaseRequestBuilder):
     
     def to_get_request_information(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Liefert alle aktiven Checklisten-Definitionen (Typ CHECKLIST), die keiner bestimmten Firma zugeordnet sind.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. linkId=0 (Definitionen), type=CHECKLIST, active=true; Checklisten mit Firmenzuordnung werden ausgeschlossen, da keine companyId/departmentId übergeben wird. Kein Rechte-Check im Controller sichtbar.
-        param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
+        Liefert alle aktiven Checklisten-Definitionen (Typ CHECKLIST), die keiner bestimmten Firma zugeordnet sind.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: module, Rollen TANSS_APP.Hinweis: Auch unter /api/tanss.app/v1. linkId=0 (Definitionen), type=CHECKLIST, active=true; Checklisten mit Firmenzuordnung werden ausgeschlossen, da keine companyId/departmentId übergeben wird. Eine eigene Rechteprüfung ist nicht dokumentiert. param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
         """
         request_info = RequestInformation(Method.GET, self.url_template, self.path_parameters)

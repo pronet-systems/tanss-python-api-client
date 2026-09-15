@@ -13,7 +13,7 @@ class WithRulePutResponse(AdditionalDataHolder, Parsable):
     # Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.
     additional_data: dict[str, Any] = field(default_factory=dict)
 
-    # Mailroboter-Regel mit Aktionen und Bedingungen. Feldnamen aus der Entity TnsMailRobotRule abgeleitet (DTO im Build obfuskiert, JSON-Schlüssel unsicher).
+    # Mailroboter-Regel mit Aktionen und Bedingungen. Die JSON-Schlüssel sind nicht dokumentiert und daher unsicher.
     content: Optional[TnsMailRobotRule] = None
     # The meta property
     meta: Optional[TnsMetaMessage] = None

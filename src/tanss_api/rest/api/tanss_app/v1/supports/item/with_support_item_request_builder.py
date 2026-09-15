@@ -34,7 +34,7 @@ class WithSupportItemRequestBuilder(BaseRequestBuilder):
     
     async def delete(self,request_configuration: Optional[RequestConfiguration[WithSupportItemRequestBuilderDeleteQueryParameters]] = None) -> Optional[WithSupportDeleteResponse]:
         """
-        Loescht eine Taetigkeit/Termin (wie DELETE /api/v1/supports/{id}); mit discardOnSupport=true wird bei bereits in eine Taetigkeit umgewandelten Terminen (planningType SUPPORT) nicht geloescht, sondern 403 CHANGES_WERE_DISCARDED geworfen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Loeschrechte nicht analysiert. Status DELETED. Auch unter /api/tanss.x/v1.
+        Loescht eine Taetigkeit/Termin (wie DELETE /api/v1/supports/{id}); mit discardOnSupport=true wird bei bereits in eine Taetigkeit umgewandelten Terminen (planningType SUPPORT) nicht geloescht, sondern 403 CHANGES_WERE_DISCARDED geworfen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Die nötigen Rechte sind nicht dokumentiert. Status DELETED. Auch unter /api/tanss.x/v1.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[WithSupportDeleteResponse]
         """
@@ -49,7 +49,7 @@ class WithSupportItemRequestBuilder(BaseRequestBuilder):
     
     async def get(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[WithSupportGetResponse]:
         """
-        Liefert eine Taetigkeit (wie GET /api/v1/supports/{id} ohne sequenceId), zusaetzlich mit Firmenadresse in den linkedEntities (Option ADD_COMPANY_ADDRESS). Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: 404 OBJECT_NOT_FOUND. Leserechte nicht analysiert. Auch unter /api/tanss.x/v1.
+        Liefert eine Taetigkeit (wie GET /api/v1/supports/{id} ohne sequenceId), zusaetzlich mit Firmenadresse in den linkedEntities (Option ADD_COMPANY_ADDRESS). Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: 404 OBJECT_NOT_FOUND. Die nötigen Rechte sind nicht dokumentiert. Auch unter /api/tanss.x/v1.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[WithSupportGetResponse]
         """
@@ -82,7 +82,7 @@ class WithSupportItemRequestBuilder(BaseRequestBuilder):
     
     def to_delete_request_information(self,request_configuration: Optional[RequestConfiguration[WithSupportItemRequestBuilderDeleteQueryParameters]] = None) -> RequestInformation:
         """
-        Loescht eine Taetigkeit/Termin (wie DELETE /api/v1/supports/{id}); mit discardOnSupport=true wird bei bereits in eine Taetigkeit umgewandelten Terminen (planningType SUPPORT) nicht geloescht, sondern 403 CHANGES_WERE_DISCARDED geworfen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Loeschrechte nicht analysiert. Status DELETED. Auch unter /api/tanss.x/v1.
+        Loescht eine Taetigkeit/Termin (wie DELETE /api/v1/supports/{id}); mit discardOnSupport=true wird bei bereits in eine Taetigkeit umgewandelten Terminen (planningType SUPPORT) nicht geloescht, sondern 403 CHANGES_WERE_DISCARDED geworfen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Die nötigen Rechte sind nicht dokumentiert. Status DELETED. Auch unter /api/tanss.x/v1.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
         """
@@ -93,7 +93,7 @@ class WithSupportItemRequestBuilder(BaseRequestBuilder):
     
     def to_get_request_information(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Liefert eine Taetigkeit (wie GET /api/v1/supports/{id} ohne sequenceId), zusaetzlich mit Firmenadresse in den linkedEntities (Option ADD_COMPANY_ADDRESS). Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: 404 OBJECT_NOT_FOUND. Leserechte nicht analysiert. Auch unter /api/tanss.x/v1.
+        Liefert eine Taetigkeit (wie GET /api/v1/supports/{id} ohne sequenceId), zusaetzlich mit Firmenadresse in den linkedEntities (Option ADD_COMPANY_ADDRESS). Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: 404 OBJECT_NOT_FOUND. Die nötigen Rechte sind nicht dokumentiert. Auch unter /api/tanss.x/v1.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
         """
@@ -130,7 +130,7 @@ class WithSupportItemRequestBuilder(BaseRequestBuilder):
     @dataclass
     class WithSupportItemRequestBuilderDeleteQueryParameters():
         """
-        Loescht eine Taetigkeit/Termin (wie DELETE /api/v1/supports/{id}); mit discardOnSupport=true wird bei bereits in eine Taetigkeit umgewandelten Terminen (planningType SUPPORT) nicht geloescht, sondern 403 CHANGES_WERE_DISCARDED geworfen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Loeschrechte nicht analysiert. Status DELETED. Auch unter /api/tanss.x/v1.
+        Loescht eine Taetigkeit/Termin (wie DELETE /api/v1/supports/{id}); mit discardOnSupport=true wird bei bereits in eine Taetigkeit umgewandelten Terminen (planningType SUPPORT) nicht geloescht, sondern 403 CHANGES_WERE_DISCARDED geworfen. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Die nötigen Rechte sind nicht dokumentiert. Status DELETED. Auch unter /api/tanss.x/v1.
         """
         def get_query_parameter(self,original_name: str) -> str:
             """

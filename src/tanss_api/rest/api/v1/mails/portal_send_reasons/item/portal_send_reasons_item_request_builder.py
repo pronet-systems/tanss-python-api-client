@@ -49,7 +49,7 @@ class PortalSendReasonsItemRequestBuilder(BaseRequestBuilder):
     
     async def get(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[PortalSendReasonsGetResponse]:
         """
-        Generischer Admin-Endpunkt: liefert den Portal-Versandgrund anhand des Schlüssels.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Firmenzugriffsprüfung falls ITnsCompanyAssignable (FORBIDDEN_NO_COMPANY_ACCESS); weitere Hooks der Service-Klasse.Hinweise: OBJECT_NOT_FOUND wenn unbekannt; ggf. Filterstrategien. Felder der Entität nicht analysiert. meta FOUND.
+        Generischer Admin-Endpunkt: liefert den Portal-Versandgrund anhand des Schlüssels.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Firmenzugriffsprüfung falls ITnsCompanyAssignable (FORBIDDEN_NO_COMPANY_ACCESS); weitere Hooks der Service-Klasse.Hinweise: OBJECT_NOT_FOUND wenn unbekannt; ggf. Filterstrategien. Felder der Entität nicht dokumentiert. meta FOUND.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[PortalSendReasonsGetResponse]
         """
@@ -93,7 +93,7 @@ class PortalSendReasonsItemRequestBuilder(BaseRequestBuilder):
     
     def to_get_request_information(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Generischer Admin-Endpunkt: liefert den Portal-Versandgrund anhand des Schlüssels.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Firmenzugriffsprüfung falls ITnsCompanyAssignable (FORBIDDEN_NO_COMPANY_ACCESS); weitere Hooks der Service-Klasse.Hinweise: OBJECT_NOT_FOUND wenn unbekannt; ggf. Filterstrategien. Felder der Entität nicht analysiert. meta FOUND.
+        Generischer Admin-Endpunkt: liefert den Portal-Versandgrund anhand des Schlüssels.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Firmenzugriffsprüfung falls ITnsCompanyAssignable (FORBIDDEN_NO_COMPANY_ACCESS); weitere Hooks der Service-Klasse.Hinweise: OBJECT_NOT_FOUND wenn unbekannt; ggf. Filterstrategien. Felder der Entität nicht dokumentiert. meta FOUND.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
         """

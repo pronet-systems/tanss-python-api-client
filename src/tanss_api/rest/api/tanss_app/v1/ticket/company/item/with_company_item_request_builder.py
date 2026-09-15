@@ -31,7 +31,7 @@ class WithCompanyItemRequestBuilder(BaseRequestBuilder):
     
     async def get(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[WithCompanyGetResponse]:
         """
-        Alias von GET /api/v1/tickets/company/{id} - Tickets einer Firma. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Listenservice nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von GET /api/v1/tickets/company/{id} - Tickets einer Firma. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.x/v1.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[WithCompanyGetResponse]
         """
@@ -46,7 +46,7 @@ class WithCompanyItemRequestBuilder(BaseRequestBuilder):
     
     def to_get_request_information(self,request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Alias von GET /api/v1/tickets/company/{id} - Tickets einer Firma. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Listenservice nicht analysiert. Auch unter /api/tanss.x/v1.
+        Alias von GET /api/v1/tickets/company/{id} - Tickets einer Firma. Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft. Token: module, Rollen TANSS_APP. Hinweise: Auch unter /api/tanss.x/v1.
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
         """

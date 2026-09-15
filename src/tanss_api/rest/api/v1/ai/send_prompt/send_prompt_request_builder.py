@@ -33,7 +33,7 @@ class SendPromptRequestBuilder(BaseRequestBuilder):
     
     async def post(self,body: TnsLLMRequest, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> Optional[SendPromptPostResponse]:
         """
-        Sendet einen Text mit dem gewählten Prompt an den konfigurierten LLM-Provider und liefert die Antwort synchron.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Lizenz ACTIVE_SUBSCRIPTION, ROLE_USER (WebSecurity); kein weiterer Rechte-Check.Hinweise: promptId -> TnsLLMPrompt -> configId -> TnsLLMConfiguration -> Provider; 404 PROMPT_NOT_FOUND bzw. LLM_CONFIG_NOT_FOUND. Provider-Aufruf nicht analysiert. meta FOUND.
+        Sendet einen Text mit dem gewählten Prompt an den konfigurierten LLM-Provider und liefert die Antwort synchron.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Lizenz ACTIVE_SUBSCRIPTION, ROLE_USER (WebSecurity); kein weiterer Rechte-Check.Hinweise: promptId -> TnsLLMPrompt -> configId -> TnsLLMConfiguration -> Provider; 404 PROMPT_NOT_FOUND bzw. LLM_CONFIG_NOT_FOUND. meta FOUND.
         param body: Anfrage an den LLM-Provider (TnsLLMRequest).
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: Optional[SendPromptPostResponse]
@@ -51,7 +51,7 @@ class SendPromptRequestBuilder(BaseRequestBuilder):
     
     def to_post_request_information(self,body: TnsLLMRequest, request_configuration: Optional[RequestConfiguration[QueryParameters]] = None) -> RequestInformation:
         """
-        Sendet einen Text mit dem gewählten Prompt an den konfigurierten LLM-Provider und liefert die Antwort synchron.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Lizenz ACTIVE_SUBSCRIPTION, ROLE_USER (WebSecurity); kein weiterer Rechte-Check.Hinweise: promptId -> TnsLLMPrompt -> configId -> TnsLLMConfiguration -> Provider; 404 PROMPT_NOT_FOUND bzw. LLM_CONFIG_NOT_FOUND. Provider-Aufruf nicht analysiert. meta FOUND.
+        Sendet einen Text mit dem gewählten Prompt an den konfigurierten LLM-Provider und liefert die Antwort synchron.Nicht in der offiziellen Schnittstellenbeschreibung gefuehrt; vom Server so umgesetzt, gegen 10.10 geprueft.Token: general, Rollen USER. TANSS_APP-Token nur mit loggedInUserId.Rechte: Lizenz ACTIVE_SUBSCRIPTION, ROLE_USER (WebSecurity); kein weiterer Rechte-Check.Hinweise: promptId -> TnsLLMPrompt -> configId -> TnsLLMConfiguration -> Provider; 404 PROMPT_NOT_FOUND bzw. LLM_CONFIG_NOT_FOUND. meta FOUND.
         param body: Anfrage an den LLM-Provider (TnsLLMRequest).
         param request_configuration: Configuration for the request such as headers, query parameters, and middleware options.
         Returns: RequestInformation
